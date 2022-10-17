@@ -9,7 +9,6 @@ body {
     padding: 15px;
     gap: 10px;
     font-size: 32px;
-    width: 20%;
     }
 
 .link {
@@ -35,9 +34,9 @@ body {
     
 .dropdown-menu {
     position: absolute;
+    z-index: 1;
     left: 0;
     top: calc(100% + 5px);
-    background-color: white;
     padding: 5px;
     border-radius: 16px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
@@ -47,7 +46,6 @@ body {
     transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
     border-style: solid;
     border-color: grey;
-    
     }
     
 .dropdown.active > .link + .dropdown-menu {
@@ -59,10 +57,11 @@ body {
 .information-grid {
     display: grid;
     grid-template-columns: max-content;
+    background: white;
 }
 
 .dropdown-menu-content{
-    background: none;
+    background: white;
     border: none;
     text-decoration: none;
     display: flex;
@@ -71,10 +70,18 @@ body {
     cursor: pointer;
     padding: 15px;
     font-size: calc((1vh+1vw)/2);
+    
     }
     
 .dropdown-menu-content:hover {
-      
     color: black;
-
     }
+
+.main-page {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 5px;
+    border: 5px solid black;
+    padding: 15px 5px;
+}
