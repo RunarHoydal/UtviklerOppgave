@@ -13,3 +13,18 @@ document.addEventListener("click", e => {
         dropdown.classList.remove("active")
     })
 })
+
+
+
+//const resultsList = document.getElementById('results')
+//new URLSearchParams(window.location.search).forEach((value, name) => {
+//    resultsList.append('${input}: ${value}')
+//    resultsList.append(document.createElement('br'))
+//})
+
+
+const resultsList = document.getElementById("Timeføring")
+console.log(resultsList)
+//document.addEventListener("click", e => {
+//    console.log(document)
+//})

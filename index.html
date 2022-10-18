@@ -37,24 +37,91 @@
         <h1>
             Timeføring
         </h1>
+        
+        <form action="timeliste.html" method = "get">
+            <fieldset>
+                <legend>Prosjekt Tittel</legend>
+                <input name="prosjekt" id="prosjekt">
+            </fieldset>
+            <fieldset>
+                <legend>Dato</legend>
+                <input name="dato" id="dato">
+            </fieldset>
+            <fieldset>
+                <legend>Start</legend>
+                <select name="input" id="working-hours" required>
+                    <option value="8:00">8:00</option>
+                    <option value="8:30">8:30</option>
+                    <option value="9:00">9:00</option>
+                    <option value="9:30">9:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Slutt</legend>
+                <select name="input" id="working-hours" required>
+                    <option value="8:30">8:30</option>
+                    <option value="9:00">9:00</option>
+                    <option value="9:30">9:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Beskrivelse</legend>
+                <input name="beskrivelse" id="beskrivelse">
+            </fieldset>
 
-        <form>
+        </form>
+
+
+        <form name="Timeføring" action = "timeliste.html" method="GET">
             <table class="table">
                 <tr>
                     <th>Project Title</th>
+                    <th>Date</th>
                     <th colspan="2">Hours Worked</th>
                     <th>Description</th>
                 </tr>
                 <tr>
+                    <th></th>
                     <th></th>
                     <th>Start</th>
                     <th>End</th>
                     <th></th>
                 </tr>
                 <tr>
-                    <th>Project 4</th>
                     <th>
-                        <select name="starting-hour" id="working-hours">
+                        <input type="text" name = "input" id="working-hours" value = "Prosjekt 4" required>
+                    </th>
+                    <th>
+                        <label for="date"></label>
+                        <input type="date" name="input" id="date">
+                    </th>
+                    <th>
+                        <select name="input" id="working-hours" required>
                             <option value="8:00">8:00</option>
                             <option value="8:30">8:30</option>
                             <option value="9:00">9:00</option>
@@ -74,7 +141,7 @@
                         </select>
                     </th>
                     <th>
-                        <select name="ending-hour" id="working-hours">
+                        <select name="input" id="working-hours" required>
                             <option value="8:30">8:30</option>
                             <option value="9:00">9:00</option>
                             <option value="9:30">9:30</option>
@@ -93,12 +160,13 @@
                             <option value="16:00">16:00</option>
                         </select>
                     </th>
-                    <th><input id = "test" class = "test_class" type= "text" /></th>
+                    <th><input id = "test"  name = "input" class = "test_class" type= "text"></th>
                 </tr>
             </table>
             <br><br>
-            <input type="submit" value="Submit">
+            <button type = "submit" class = "Timeføring", id = "Timeføring">Send In</button>
         </form>
+
 
     </div>
     
