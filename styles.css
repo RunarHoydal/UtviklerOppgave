@@ -85,3 +85,14 @@ body {
     border: 5px solid black;
     padding: 15px 5px;
 }
+
+.table {
+    padding: 6px;
+    border: 2px solid black;
+
+}
+
+th {
+    
+    padding: 6px;
+}
