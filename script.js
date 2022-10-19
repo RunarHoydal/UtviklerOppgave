@@ -16,15 +16,29 @@ document.addEventListener("click", e => {
 
 
 
-//const resultsList = document.getElementById('results')
-//new URLSearchParams(window.location.search).forEach((value, name) => {
-//    resultsList.append('${input}: ${value}')
-//    resultsList.append(document.createElement('br'))
-//})
+const resultsList = document.getElementById("results");
+var table = document.getElementById("Timeliste-log")
+var row = table.insertRow(-1)
+
+var count = 0
+new URLSearchParams(window.location.search).forEach((value, name) => {
+    var currentCell = row.insertCell(count)
+    currentCell.innerHTML = value
+    count++
+})
 
 
-const resultsList = document.getElementById("Timeføring")
-console.log(resultsList)
+
+//const resultsList = document.getElementById("Timeføring").onsubmit();
+//console.log(resultsList)
 //document.addEventListener("click", e => {
 //    console.log(document)
 //})
+
+//function myFunction() {
+//    document.getElementById("Timeføring").submit();
+//    console.log(document.getElementById("Timeføring").submit())
+//  }
+
+
+
