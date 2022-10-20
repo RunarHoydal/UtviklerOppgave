@@ -11,10 +11,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Allow dynamic scaling of the website text to smaller or larger devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Website</title>
-    <link rel="stylesheet" href="styles.css"> <!--Include external css file for formating-->
+    <link rel="stylesheet" href="styles.css"> 
     <script src="script.js" defer></script>
 </head>
 
@@ -24,7 +24,9 @@
         <div class="dropdown" data-dropdown>
             <button class="link" data-dropdown-button>Meny</button>
             <div class="dropdown-menu information-grid">
-                <button class="dropdown-menu-content">Prosjekt 1</button>
+                <a href="timeliste.html">
+                    <button class="dropdown-menu-content">Prosjekt 1</button>
+                </a>
                 <button class="dropdown-menu-content">Prosjekt 2</button>
                 <button class="dropdown-menu-content">Prosjekt 3</button>
                 <button class="dropdown-menu-content">Prosjekt 4</button>
@@ -34,72 +36,89 @@
 
     <!--Content inside Project 4 -->
     <div class="main-page">                   
-            <div class="timeliste">
-                <h1>
-                    Timeføring
-                </h1>
-    
-                <form action="timeliste.html" method = "get" id = "Timeføring">
-                    <fieldset>
-                        <legend>Prosjekt Tittel</legend>
-                        <input type = "text" name="prosjekt" id="prosjekt">
-                    </fieldset>
-                    <fieldset>
-                        <legend>Dato</legend>
-                        <input type = "date" name="dato" id="dato">
-                    </fieldset>
-                    <fieldset>
-                        <legend>Start</legend>
-                        <select name="input" id="working-hours" required>
-                            <option value="8:00">8:00</option>
-                            <option value="8:30">8:30</option>
-                            <option value="9:00">9:00</option>
-                            <option value="9:30">9:30</option>
-                            <option value="10:00">10:00</option>
-                            <option value="10:30">10:30</option>
-                            <option value="11:00">11:00</option>
-                            <option value="11:30">11:30</option>
-                            <option value="12:00">12:00</option>
-                            <option value="12:30">12:30</option>
-                            <option value="13:00">13:00</option>
-                            <option value="13:30">13:30</option>
-                            <option value="14:00">14:00</option>
-                            <option value="14:30">14:30</option>
-                            <option value="15:00">15:00</option>
-                            <option value="15:30">15:30</option>
-                        </select>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Slutt</legend>
-                        <select name="input" id="working-hours" required>
-                            <option value="8:30">8:30</option>
-                            <option value="9:00">9:00</option>
-                            <option value="9:30">9:30</option>
-                            <option value="10:00">10:00</option>
-                            <option value="10:30">10:30</option>
-                            <option value="11:00">11:00</option>
-                            <option value="11:30">11:30</option>
-                            <option value="12:00">12:00</option>
-                            <option value="12:30">12:30</option>
-                            <option value="13:00">13:00</option>
-                            <option value="13:30">13:30</option>
-                            <option value="14:00">14:00</option>
-                            <option value="14:30">14:30</option>
-                            <option value="15:00">15:00</option>
-                            <option value="15:30">15:30</option>
-                            <option value="16:00">16:00</option>
-                        </select>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Beskrivelse</legend>
-                        <input type = "text" name="beskrivelse" id="beskrivelse">
-                    </fieldset>
-                    <br><br>
-                    <button type = "submit" id = "Timeføring" onclick="myFunction()">Send In</button>
-                </form>
-             
+        <div class="timeliste">
+            <h1>
+                Timeføring
+            </h1>
+
+            <form method = "get" id = "Timeføring">
+                <table>
+                    <tr>
+                        <td>Dato</td>
+                        <td>Start</td>
+                        <td>Slutt</td>
+                        <td>Beskrivelse</td>
+                    <tr>
+                    <tr>
+                        <td>
+                            <input type = "date" name="dato" id="dato">
+                        </td>
+                        <td>
+                            <select name="start" id="start" required>
+                                <option value="8:00">8:00</option>
+                                <option value="8:30">8:30</option>
+                                <option value="9:00">9:00</option>
+                                <option value="9:30">9:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                            </select>
+                        </td>
+
+                        <td>
+                            <select name="slutt" id="slutt" required>
+                                <option value="8:30">8:30</option>
+                                <option value="9:00">9:00</option>
+                                <option value="9:30">9:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type = "text" name="beskrivelse" id="beskrivelse">
+                        </td>
+                    </tr>
+                </table>
+
+                <br><br>
+                <input type="button" value="test" onclick="SendInn()">
+                <button type = "submit" id = "Timeføring">Send In</button>
+                <input type="button" value="Delete">
+            </form>
+        </div>     
+
+        <div id="results">
+            <table id="Timeliste-log" class="timeliste-log">
+                <thead>
+                    <td class = "thead">Dato</td>
+                    <td class = "thead">Start</td>
+                    <td class = "thead">Slutt</td>
+                    <td class = "thead">Beskrivelse</td>               
+                </thead>
+            </table>
         </div>
-            
+
+        
         
     </div>
     
