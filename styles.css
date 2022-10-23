@@ -77,30 +77,3 @@ body {
     color: black;
     }
 
-.main-page {
-    position: relative;
-    width: auto;
-    height: 1000px;
-    margin: 5px;
-    border: 5px solid black;
-    padding: 15px 5px;
-    text-align: left;
-}
-
-.timeliste{
-    position: relative;
-    margin: 0px;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.timeliste-log {
-    border: 2px solid black;
-    padding: 0px 2px;
-    color: solid black;
-}
-
-.thead {
-    padding: 0px 32px 0px 0px;
-    background-color: lightblue;
-}

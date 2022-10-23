@@ -35,95 +35,74 @@
     </div>
 
     <!--Content inside Project 4 -->
-    <div class="main-page">                   
-        <div class="timeliste">
-            <h1>
-                Timeføring
-            </h1>
+    <section class = "data-submission">
+        <form onsubmit="addData(); return false;">
+            <h4>Dato</h4>
+            <input type = "date" name="date" id="date">
 
-            <form method = "get" id = "Timeføring">
-                <table>
-                    <tr>
-                        <td>Dato</td>
-                        <td>Start</td>
-                        <td>Slutt</td>
-                        <td>Beskrivelse</td>
-                    <tr>
-                    <tr>
-                        <td>
-                            <input type = "date" name="dato" id="dato">
-                        </td>
-                        <td>
-                            <select name="start" id="start" required>
-                                <option value="8:00">8:00</option>
-                                <option value="8:30">8:30</option>
-                                <option value="9:00">9:00</option>
-                                <option value="9:30">9:30</option>
-                                <option value="10:00">10:00</option>
-                                <option value="10:30">10:30</option>
-                                <option value="11:00">11:00</option>
-                                <option value="11:30">11:30</option>
-                                <option value="12:00">12:00</option>
-                                <option value="12:30">12:30</option>
-                                <option value="13:00">13:00</option>
-                                <option value="13:30">13:30</option>
-                                <option value="14:00">14:00</option>
-                                <option value="14:30">14:30</option>
-                                <option value="15:00">15:00</option>
-                                <option value="15:30">15:30</option>
-                            </select>
-                        </td>
+            <h4>Start</h4>
+            <select name="start" id="start" required>
+                <option value="8:00">8:00</option>
+                <option value="8:30">8:30</option>
+                <option value="9:00">9:00</option>
+                <option value="9:30">9:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30">10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="11:30">11:30</option>
+                <option value="12:00">12:00</option>
+                <option value="12:30">12:30</option>
+                <option value="13:00">13:00</option>
+                <option value="13:30">13:30</option>
+                <option value="14:00">14:00</option>
+                <option value="14:30">14:30</option>
+                <option value="15:00">15:00</option>
+                <option value="15:30">15:30</option>
+            </select>
 
-                        <td>
-                            <select name="slutt" id="slutt" required>
-                                <option value="8:30">8:30</option>
-                                <option value="9:00">9:00</option>
-                                <option value="9:30">9:30</option>
-                                <option value="10:00">10:00</option>
-                                <option value="10:30">10:30</option>
-                                <option value="11:00">11:00</option>
-                                <option value="11:30">11:30</option>
-                                <option value="12:00">12:00</option>
-                                <option value="12:30">12:30</option>
-                                <option value="13:00">13:00</option>
-                                <option value="13:30">13:30</option>
-                                <option value="14:00">14:00</option>
-                                <option value="14:30">14:30</option>
-                                <option value="15:00">15:00</option>
-                                <option value="15:30">15:30</option>
-                                <option value="16:00">16:00</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type = "text" name="beskrivelse" id="beskrivelse">
-                        </td>
-                    </tr>
-                </table>
+            <h4>Slutt</h4>
+            <select name="end" id="end" required>
+                <option value="8:30">8:30</option>
+                <option value="9:00">9:00</option>
+                <option value="9:30">9:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30">10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="11:30">11:30</option>
+                <option value="12:00">12:00</option>
+                <option value="12:30">12:30</option>
+                <option value="13:00">13:00</option>
+                <option value="13:30">13:30</option>
+                <option value="14:00">14:00</option>
+                <option value="14:30">14:30</option>
+                <option value="15:00">15:00</option>
+                <option value="15:30">15:30</option>
+                <option value="16:00">16:00</option>
+            </select>
 
-                <br><br>
-                <input type="button" value="test" onclick="SendInn()">
-                <button type = "submit" id = "Timeføring">Send In</button>
-                <input type="button" value="Delete">
-            </form>
-        </div>     
 
-        <div id="results">
-            <table id="Timeliste-log" class="timeliste-log">
-                <thead>
-                    <td class = "thead">Dato</td>
-                    <td class = "thead">Start</td>
-                    <td class = "thead">Slutt</td>
-                    <td class = "thead">Beskrivelse</td>               
-                </thead>
-            </table>
-        </div>
+            <h4>Beskrivelse</h4>
+            <input type = "text" name="description" id="description" placeholder = "Beskrivelse">
 
-        
-        
-    </div>
+            <br><br>
+            <input type="submit" value="add to Cart"/>
+            <input type = "reset" value = "Clear"/>
+            <input type = "button" value = "Delete localStorage" onclick = "deleteData();"/>
+        </form>
+    </section>
+
+    <section>
+        <table id="working-hours" border = 1>
+            <tr>
+                <td>Dato</td>
+                <td>Start Tid</td>
+                <td>Slutt Tid</td>
+                <td>Beskrivelse</td>               
+            </tr>
+        </table>
+    </section>
+
     
-
-
 </body>
 
 </html>
