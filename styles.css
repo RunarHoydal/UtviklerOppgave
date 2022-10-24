@@ -77,3 +77,76 @@ body {
     color: black;
     }
 
+
+.data-submission {
+    border: solid grey;
+}
+
+h4 {
+    font-size: 26px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.button {
+    border-radius: 8px;
+    border: none;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.submit {
+    background-color: lightblue; 
+    padding: 15px 15px;
+}
+
+.edit {
+    background-color: lightgreen;
+    padding: 2px 2px;
+}
+
+.delete {
+    background-color: pink;
+    padding: 2px 2px;
+}
+
+.input {
+    border: none;
+    background-color: lightblue;
+    width: 100%;
+    border-radius: 10px;
+    height: 36px;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+
+.data {
+    border-radius: 10px;
+    background-color: white;
+}
+
+.table {
+    border: solid;
+    border-radius: 10px;
+}
+
+
+.table-head {
+    border-bottom: solid black;
+    padding-right: 20px;
+    font-size: 20px;
+}
+
+tr {
+    padding: 5px 5px;
+}
+
+td {
+    border-bottom: solid grey;
+    text-align: left;
+    font-size: 18px;
+}
