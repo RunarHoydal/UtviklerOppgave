@@ -81,25 +81,25 @@ function showData(){
 
 function showDataMinimized(){
 	getData();
-	var minimizedTable = document.getElementById("id-entries");
+	var minimizedTable = document.getElementById("minimized-dropdown");
 	minimizedTable.innerHTML = "";
 	for (i=0; i<arr.length; i++){
 		minimizedTable.innerHTML += `
-		<div class = "entries"> 
-			<input type="button" value = ${i + 1} class = "entries button">
-		</div>
-		<div class = "values"> 
-			<h4>Dato</h4>
-			${arr[i].date}
-			
-			<h4>Start</h4>
-			${arr[i].start}
-			
-			<h4>Slutt</h4>
-			${arr[i].end}
-			
-			<h4>Beskrivelse</h4>
-			${arr[i].description}
+		<div id="dropdown" class="dropdown" data-dropdown>
+			<button class= "link" data-dropdown-button> ${i + 1} </button>
+			<div class = "dropdown-menu"> 
+				<h4>Dato</h4>
+				${arr[i].date}
+				
+				<h4>Start</h4>
+				${arr[i].start}
+				
+				<h4>Slutt</h4>
+				${arr[i].end}
+				
+				<h4>Beskrivelse</h4>
+				${arr[i].description}
+			</div>
 		</div>
 		`
 	}
@@ -150,6 +150,8 @@ window.addEventListener('load', () => {
 	showData();
 	showDataMinimized();
 })
+
+
 
 
 

@@ -14,12 +14,12 @@ body {
 .link {
     background: none;
     border: none;
-    display: relative;
+    display: flex;
     color: #777;
     font-family: inherit;
     cursor: pointer;
     padding: 5px;
-    font-size: 80%;
+    font-size: 26px;
     }
 
 .dropdown.active > 
@@ -34,6 +34,7 @@ body {
     
 .dropdown-menu {
     position: absolute;
+    background: white;
     z-index: 1;
     left: 0;
     top: calc(100% + 5px);
@@ -69,18 +70,13 @@ body {
     font-family: inherit;
     cursor: pointer;
     padding: 15px;
-    font-size: calc((1vh+1vw)/2);
+    font-size: 80%;
     
     }
     
 .dropdown-menu-content:hover {
     color: black;
     }
-
-
-
-
-
 
 
 
@@ -171,21 +167,17 @@ td {
     
     .minimized {
         opacity: 100%;
+        border-radius: 10px;
+        border: none;
+        text-align: center;
     }
 
-    .entries {
-        opacity: 100%;
+    .link {
         border: 1px solid black;
         border-radius: 10px;
-        width: 100px;
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .values {
-        position: flex;
         width: 100%;
         text-align: center;
-        border: 1px solid black;
-    }
+        }
+
+    
 } 
