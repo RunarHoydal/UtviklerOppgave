@@ -22,6 +22,7 @@ document.addEventListener("click", e => {
 // var arr = new Array();
 // var row = null;
 function addData(){
+
 	if (document.getElementById("submit").value == "Legg Til"){
 		getData();
 		
@@ -51,6 +52,7 @@ function addData(){
 
 function getData(){
 	var str = localStorage.getItem("localData");
+	console.log(localStorage.getItem("localData"));
 
 	if (str != null) {
 		arr = JSON.parse(str);
@@ -59,6 +61,7 @@ function getData(){
 		arr = new Array();
 	}
 	
+	console.log(arr);
 	
 }
 
@@ -142,8 +145,6 @@ function deleteData(td){
 
 function showDataMinimized(){
 	getData();
-	console.log(arr);
-	console.log(localStorage.getItem("localData"));
 
 	var minimizedTable = document.getElementById("minimized-dropdown");
 	minimizedTable.innerHTML = "";
