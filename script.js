@@ -21,6 +21,45 @@ document.addEventListener("click", e => {
 // Storing data entries
 // var arr = new Array();
 // var row = null;
+
+function getLocalData(){
+	var project = document.getElementById("Title").innerHTML;
+	if (project == "Prosjekt 1"){
+		var str = localStorage.getItem("localDataP1");
+	}
+	else if (project == "Prosjekt 2"){
+		var str = localStorage.getItem("localDataP2");
+		
+	}
+	else if (project == "Prosjekt 3"){
+		var str = localStorage.getItem("localDataP3");
+	}
+	else if (project == "Prosjekt 4"){
+		var str = localStorage.getItem("localDataP4");
+	}
+	return str;
+}
+
+function setLocalData(){
+	var project = document.getElementById("Title").innerHTML;
+	if (project == "Prosjekt 1"){
+		localStorage.setItem("localDataP1", JSON.stringify(arr));
+	}
+	else if (project == "Prosjekt 2"){
+		localStorage.setItem("localDataP2", JSON.stringify(arr));
+		
+	}
+	else if (project == "Prosjekt 3"){
+		localStorage.setItem("localDataP3", JSON.stringify(arr));
+	}
+	else if (project == "Prosjekt 4"){
+		localStorage.setItem("localDataP4", JSON.stringify(arr));
+	}
+	return project;
+}
+
+
+
 function addData(){
 
 	if (document.getElementById("submit").value == "Legg Til"){
@@ -32,7 +71,7 @@ function addData(){
 			end: document.getElementById("end").value,
 			description: document.getElementById("description").value,
 		});
-		localStorage.setItem("localData", JSON.stringify(arr));
+		setLocalData();
 	}
 	else if (window.screen.width <= 500) {
 		updateDataMinimized();
@@ -51,18 +90,17 @@ function addData(){
 }
 
 function getData(){
-	var str = localStorage.getItem("localData");
-	console.log(localStorage.getItem("localData"));
+	var str = getLocalData();
 
-	if (str != null) {
+
+	// var str = localStorage.getItem("localData");
+
+	if (str != null){
 		arr = JSON.parse(str);
-	} 
-	else{
-		arr = new Array();
 	}
-	
-	console.log(arr);
-	
+	else {
+		arr = new Array();
+	}	
 }
 
 
@@ -124,7 +162,7 @@ function updateData(){
 		end: document.getElementById("end").value,
 		description: document.getElementById("description").value,
 	})
-	localStorage.setItem("localData", JSON.stringify(arr));
+	setLocalData();
 
 	document.getElementById("submit").value = "Legg Til";
 }
@@ -136,7 +174,7 @@ function deleteData(td){
 	arr.splice(row.rowIndex - 1, 1);
 	document.getElementById("working-hours").deleteRow(row.rowIndex);
 	
-	localStorage.setItem("localData", JSON.stringify(arr));
+	setLocalData();
 	
 }
 
@@ -207,7 +245,7 @@ function updateDataMinimized(){
 	arr[idx].end = document.getElementById("end").value;
 	arr[idx].description = document.getElementById("description").value;
 
-	localStorage.setItem("localData", JSON.stringify(arr));
+	setLocalData();
 
 	document.getElementById("submit").value = "Legg Til";
 
@@ -221,7 +259,7 @@ function deleteDataMinimized(td){
 	var idx = Number(parentNode.id.slice(-1));
 	
 	arr.splice(idx, 1);
-	localStorage.setItem("localData", JSON.stringify(arr));
+	setLocalData();
 	
 	showDataMinimized();
 }
