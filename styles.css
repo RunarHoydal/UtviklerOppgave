@@ -148,6 +148,8 @@ td {
     font-size: 18px;
 }
 
+
+
 .minimized {
     opacity: 0%;
 }
@@ -157,6 +159,10 @@ td {
     .table {
         opacity: 0%;
         position: absolute;
+    }
+
+    h4{
+        font-size: 32px;
     }
     
     .minimized {
@@ -181,5 +187,16 @@ td {
     .dropdown-menu-data{
         font-size: 26px;
     }
+
+    .dropdown-menu-content{
+        font-size: 26px;
+    }
+
+    textarea{
+        width:75%;
+    }
     
+    .button{
+        font-size: 26px;
+    }
 } 

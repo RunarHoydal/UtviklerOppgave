@@ -19,47 +19,6 @@ document.addEventListener("click", e => {
 
 
 // Storing data entries
-// var arr = new Array();
-// var row = null;
-
-function getLocalData(){
-	var project = document.getElementById("Title").innerHTML;
-	if (project == "Prosjekt 1"){
-		var str = localStorage.getItem("localDataP1");
-	}
-	else if (project == "Prosjekt 2"){
-		var str = localStorage.getItem("localDataP2");
-		
-	}
-	else if (project == "Prosjekt 3"){
-		var str = localStorage.getItem("localDataP3");
-	}
-	else if (project == "Prosjekt 4"){
-		var str = localStorage.getItem("localDataP4");
-	}
-	return str;
-}
-
-function setLocalData(){
-	var project = document.getElementById("Title").innerHTML;
-	if (project == "Prosjekt 1"){
-		localStorage.setItem("localDataP1", JSON.stringify(arr));
-	}
-	else if (project == "Prosjekt 2"){
-		localStorage.setItem("localDataP2", JSON.stringify(arr));
-		
-	}
-	else if (project == "Prosjekt 3"){
-		localStorage.setItem("localDataP3", JSON.stringify(arr));
-	}
-	else if (project == "Prosjekt 4"){
-		localStorage.setItem("localDataP4", JSON.stringify(arr));
-	}
-	return project;
-}
-
-
-
 function addData(){
 
 	if (document.getElementById("submit").value == "Legg Til"){
@@ -71,6 +30,7 @@ function addData(){
 			end: document.getElementById("end").value,
 			description: document.getElementById("description").value,
 		});
+
 		setLocalData();
 	}
 	else if (window.screen.width <= 500) {
@@ -91,9 +51,6 @@ function addData(){
 
 function getData(){
 	var str = getLocalData();
-
-
-	// var str = localStorage.getItem("localData");
 
 	if (str != null){
 		arr = JSON.parse(str);
@@ -178,6 +135,42 @@ function deleteData(td){
 	
 }
 
+function getLocalData(){
+	var project = document.getElementById("Title").innerHTML;
+	if (project == "Prosjekt 1"){
+		var str = localStorage.getItem("localDataP1");
+	}
+	else if (project == "Prosjekt 2"){
+		var str = localStorage.getItem("localDataP2");
+		
+	}
+	else if (project == "Prosjekt 3"){
+		var str = localStorage.getItem("localDataP3");
+	}
+	else if (project == "Prosjekt 4"){
+		var str = localStorage.getItem("localDataP4");
+	}
+	return str;
+}
+
+function setLocalData(){
+	var project = document.getElementById("Title").innerHTML;
+	if (project == "Prosjekt 1"){
+		localStorage.setItem("localDataP1", JSON.stringify(arr));
+	}
+	else if (project == "Prosjekt 2"){
+		localStorage.setItem("localDataP2", JSON.stringify(arr));
+		
+	}
+	else if (project == "Prosjekt 3"){
+		localStorage.setItem("localDataP3", JSON.stringify(arr));
+	}
+	else if (project == "Prosjekt 4"){
+		localStorage.setItem("localDataP4", JSON.stringify(arr));
+	}
+	return project;
+}
+
 
 
 
@@ -204,8 +197,9 @@ function showDataMinimized(){
 				
 				<h4>Beskrivelse</h4>
 				<div id = "description-minimized" class = "dropdown-menu-data">
-					${arr[i].description}	<br><br>
+					${arr[i].description}	
 				</div>
+				<br><br>
 
 				<input 
 					type= "button" 
