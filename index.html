@@ -42,16 +42,17 @@
 
     <h1>Prosjekt 4</h1>
     <h3>Før inn arbeidstimer her</h3>
-    <section class = "data-submission">
+    <section>
         <form onsubmit="addData(); return false;">
             <div class="data">
                 <h4>Dato</h4>
-                <input type = "date" name="date" id="date" class="input">
+                <input type = "date" name="date" id="date" class="input" required>
             </div>
 
             <div class="data">
                 <h4>Start</h4>
                 <select name="start" id="start" class="input" required>
+                    <option value="" selected disabled hidden></option>
                     <option value="8:00">8:00</option>
                     <option value="8:30">8:30</option>
                     <option value="9:00">9:00</option>
@@ -74,6 +75,7 @@
             <div class="data">
                 <h4>Slutt</h4>
                 <select name="end" id="end" class="input" required>
+                    <option value="" selected disabled hidden></option>
                     <option value="8:30">8:30</option>
                     <option value="9:00">9:00</option>
                     <option value="9:30">9:30</option>
@@ -95,14 +97,14 @@
 
             <div class="data">
                 <h4>Beskrivelse</h4>
-                <input type = "textarea" name="description" id="description" class="input" placeholder = "Hva ble gjort i løpet av timen">
+                <input type = "textarea" name="description" id="description" class="input" placeholder = "Hva ble gjort i løpet av timen?">
             </div>
 
-            <br><br>
+            <br>
             <input type="submit" value="Legg Til" class="button submit" id = "submit"/> <br>
         </form>
     </section>
-    <br><br>
+    <br><br><br><br>
 
     <h1>Timeliste</h1>
 

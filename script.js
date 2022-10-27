@@ -34,29 +34,17 @@ function addData(){
 		localStorage.setItem("localData", JSON.stringify(arr));
 	}
 	else if (window.screen.width <= 500) {
-		console.log("Here")
 		updateDataMinimized();
 	}
 	else if (window.screen.width > 500) {
 		updateData();
 	}
 
-	/*if (row == null){
-		getData();
-		
-		arr.push({
-			date: document.getElementById("date").value,
-			start: document.getElementById("start").value,
-			end: document.getElementById("end").value,
-			description: document.getElementById("description").value,
-		});
-		localStorage.setItem("localData", JSON.stringify(arr));
-	}
-	else{
-		updateDataMinimized();
-		updateData();
-	}
-	*/
+	document.getElementById("date").value = "";
+	document.getElementById("start").value = "";
+	document.getElementById("end").value = "";
+	document.getElementById("description").value = "";
+	
 	showData();
 	showDataMinimized();
 }
@@ -152,20 +140,20 @@ function showDataMinimized(){
 		minimizedTable.innerHTML += `
 		<div id="dropdown" class="dropdown" data-dropdown>
 			<button class= "link" data-dropdown-button> ${arr[i].date} </button>
-			<div id = "dropdown-menu ${i}" class = "dropdown-menu"> 
+			<div id = "dropdown-menu ${i}" class = "dropdown-menu dropdown-menu-minimized"> 
 				
 				<h4>Start</h4>
-				<div id = "start-minimized">
+				<div id = "start-minimized" class = "dropdown-menu-data">
 					${arr[i].start}
 				</div>
 				
 				<h4>Slutt</h4>
-				<div id = "end-minimized">
+				<div id = "end-minimized" class = "dropdown-menu-data">
 					${arr[i].end}
 				</div>
 				
 				<h4>Beskrivelse</h4>
-				<div id = "description-minimized">
+				<div id = "description-minimized" class = "dropdown-menu-data">
 					${arr[i].description}	<br><br>
 				</div>
 
