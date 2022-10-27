@@ -142,6 +142,8 @@ function deleteData(td){
 
 function showDataMinimized(){
 	getData();
+	console.log(arr);
+	console.log(localStorage.getItem("localData"));
 
 	var minimizedTable = document.getElementById("minimized-dropdown");
 	minimizedTable.innerHTML = "";
