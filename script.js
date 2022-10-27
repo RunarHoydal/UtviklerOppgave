@@ -19,8 +19,8 @@ document.addEventListener("click", e => {
 
 
 // Storing data entries
-var arr = new Array();
-var row = null;
+// var arr = new Array();
+// var row = null;
 function addData(){
 	if (document.getElementById("submit").value == "Legg Til"){
 		getData();
@@ -52,8 +52,14 @@ function addData(){
 function getData(){
 	var str = localStorage.getItem("localData");
 
-	if (str != null)
+	if (str != null) {
 		arr = JSON.parse(str);
+	} 
+	else{
+		arr = new Array();
+	}
+	
+	
 }
 
 
@@ -101,6 +107,8 @@ function editData(td){
 }
 
 function updateData(){
+	getData();
+
 	row.cells[0].innerHTML = document.getElementById("date").value;
 	row.cells[1].innerHTML = document.getElementById("start").value;
 	row.cells[2].innerHTML = document.getElementById("end").value;
@@ -134,6 +142,7 @@ function deleteData(td){
 
 function showDataMinimized(){
 	getData();
+
 	var minimizedTable = document.getElementById("minimized-dropdown");
 	minimizedTable.innerHTML = "";
 	for (i=0; i<arr.length; i++){
@@ -188,6 +197,8 @@ function editDataMinimized(td){
 }
 
 function updateDataMinimized(){
+	getData();
+	
 	arr[idx].date = document.getElementById("date").value;
 	arr[idx].start = document.getElementById("start").value;
 	arr[idx].end = document.getElementById("end").value;
@@ -201,10 +212,11 @@ function updateDataMinimized(){
 
 
 function deleteDataMinimized(td){
+	getData();
+
 	const parentNode = td.parentElement;
 	var idx = Number(parentNode.id.slice(-1));
 	
-	getData();
 	arr.splice(idx, 1);
 	localStorage.setItem("localData", JSON.stringify(arr));
 	
