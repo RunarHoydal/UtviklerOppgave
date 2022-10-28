@@ -17,13 +17,38 @@ document.addEventListener("click", e => {
 })
 
 
+function validStartandEndTimes(){
+	var splitIdxStart = document.getElementById("start").value.indexOf(":");
+	var splitIdxEnd = document.getElementById("end").value.indexOf(":");
+
+	var hourStart = Number(document.getElementById("start").value.slice(0, splitIdxStart));
+	var minutesStart = Number(document.getElementById("start").value.slice(splitIdxStart + 1, document.getElementById("start").value.length));
+
+	var hourEnd = Number(document.getElementById("end").value.slice(0, splitIdxEnd));
+	var minutesEnd = Number(document.getElementById("end").value.slice(splitIdxEnd + 1, document.getElementById("end").value.length));
+
+	if (hourStart > hourEnd || (hourStart == hourEnd && minutesStart > minutesEnd)){
+		alert("Sluttid må være etter starttid.")
+		return false;
+	} 
+	else if (hourStart == hourEnd && minutesStart == minutesEnd){
+		alert("Starttid og sluttid er like.")
+		return false;
+	}
+	return true;
+	
+}
 
 // Storing data entries
 function addData(){
 
+	if (validStartandEndTimes() == false){
+		return;
+	}
+	
 	if (document.getElementById("submit").value == "Legg Til"){
 		getData();
-		
+
 		arr.push({
 			date: document.getElementById("date").value,
 			start: document.getElementById("start").value,
@@ -137,38 +162,13 @@ function deleteData(td){
 
 function getLocalData(){
 	var project = document.getElementById("Title").innerHTML;
-	if (project == "Prosjekt 1"){
-		var str = localStorage.getItem("localDataP1");
-	}
-	else if (project == "Prosjekt 2"){
-		var str = localStorage.getItem("localDataP2");
-		
-	}
-	else if (project == "Prosjekt 3"){
-		var str = localStorage.getItem("localDataP3");
-	}
-	else if (project == "Prosjekt 4"){
-		var str = localStorage.getItem("localDataP4");
-	}
-	return str;
+	return localStorage.getItem(project);
 }
 
 function setLocalData(){
 	var project = document.getElementById("Title").innerHTML;
-	if (project == "Prosjekt 1"){
-		localStorage.setItem("localDataP1", JSON.stringify(arr));
-	}
-	else if (project == "Prosjekt 2"){
-		localStorage.setItem("localDataP2", JSON.stringify(arr));
-		
-	}
-	else if (project == "Prosjekt 3"){
-		localStorage.setItem("localDataP3", JSON.stringify(arr));
-	}
-	else if (project == "Prosjekt 4"){
-		localStorage.setItem("localDataP4", JSON.stringify(arr));
-	}
-	return project;
+	localStorage.setItem(project, JSON.stringify(arr));
+	return;
 }
 
 
